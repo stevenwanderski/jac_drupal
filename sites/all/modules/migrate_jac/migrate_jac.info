@@ -1,0 +1,17 @@
+name = "Migrate JAC"
+description = "Imports Coax and Folks Yii site into a shiny new Drupal 7 install"
+package = "Migration"
+core = 7.x
+dependencies[] = migrate
+dependencies[] = migrate_ui
+
+files[] = migrate_jac.migrate.inc
+files[] = jac.inc
+files[] = jac_band.inc
+files[] = jac_band_type.inc
+files[] = jac_venue.inc
+files[] = jac_show.inc
+
+; Information added by drupal.org packaging script on 2013-06-19
+version = "7.x-dev"
+core = "7.x"
