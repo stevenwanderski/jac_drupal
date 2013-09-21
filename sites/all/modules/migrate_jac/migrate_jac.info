@@ -8,7 +8,6 @@ dependencies[] = migrate_ui
 files[] = migrate_jac.migrate.inc
 files[] = jac.inc
 files[] = jac_band.inc
-files[] = jac_band_type.inc
 files[] = jac_venue.inc
 files[] = jac_show.inc
 

@@ -1,0 +1,12 @@
+name = JAC
+description = Coax and Folks custom theme
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[screen][] = css/styles.css
+
+scripts[] = js/jquery.validate.min.js
+scripts[] = js/scripts.js
+
+regions[content] = Content

@@ -21,8 +21,7 @@ class JacShowMigration extends JacMigration {
         MigrateDestinationNode::getKeySchema()
     );
 
-    $this->addFieldMapping('title')
-         ->defaultValue('Coax and Folks show');
+    // $this->addFieldMapping('title', 'venue_id');
     $this->addFieldMapping('field_band', 'band_id')
          ->sourceMigration('JacBand');
     $this->addFieldMapping('field_venue', 'venue_id')

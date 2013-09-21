@@ -12,10 +12,6 @@ function migrate_jac_migrate_api() {
         'class_name' => 'JacBandMigration',
         'group_name' => 'jac'
       ),
-      'JacBandType' => array(
-        'class_name' => 'JacBandTypeMigration',
-        'group_name' => 'jac'
-      ),
       'JacVenue' => array(
         'class_name' => 'JacVenueMigration',
         'group_name' => 'jac'

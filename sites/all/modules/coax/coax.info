@@ -1,0 +1,4 @@
+name = Coax
+description = Coax funky tweaks
+package = Coax
+core = "7.x"

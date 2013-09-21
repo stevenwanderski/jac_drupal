@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function coax_menu() {
+  $items['home'] = array(
+    'title' => 'Chicago Event Musicians',
+    'page callback' => 'coax_home',
+    'access arguments' => array('access content'),
+  );
+  $items['calendar'] = array(
+    'title' => 'Calendar',
+    'page callback' => 'coax_calendar',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback: home
+ */
+function coax_home(){
+  $vars = array();
+  $vars['shows'] = views_get_view_result('shows', 'block');
+  dpm($vars);
+  return theme('jac_home', $vars);
+}
+
+/**
+ * Page callback: calendar
+ */
+function coax_calendar(){
+  $vars = array();
+  return theme('jac_calendar', $vars);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function coax_theme($existing, $type, $theme, $path) {
+  return array(
+    'jac_home' => array(
+      'path' => drupal_get_path('theme', 'jac') .'/templates',
+      'template' => 'home',
+    ),
+    'jac_calendar' => array(
+      'path' => drupal_get_path('theme', 'jac') .'/templates',
+      'template' => 'calendar',
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function coax_preprocess_page(&$variables) {
+  $variables['main_menu'] = drupal_render(menu_tree('main-menu'));
+  $variables['band_menu'] = drupal_render(menu_tree('menu-band-menu'));
+}
+
+?>
