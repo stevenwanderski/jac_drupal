@@ -23,8 +23,14 @@ function coax_menu() {
  */
 function coax_home(){
   $vars = array();
+  $home_node = node_view(node_load(669));
+  $bands = views_get_view_result('bands', 'pics');
+  // dpm($bands);
+  $vars['image'] = $home_node['field_image'];
+  $vars['body'] = $home_node['field_body'];
+  $vars['track'] = $home_node['field_track'];
   $vars['shows'] = views_get_view_result('shows', 'block');
-  dpm($vars);
+  $vars['bands'] = $bands;
   return theme('jac_home', $vars);
 }
 
@@ -57,7 +63,24 @@ function coax_theme($existing, $type, $theme, $path) {
  */
 function coax_preprocess_page(&$variables) {
   $variables['main_menu'] = drupal_render(menu_tree('main-menu'));
-  $variables['band_menu'] = drupal_render(menu_tree('menu-band-menu'));
+  $band_menu = menu_tree('menu-band-menu');
+  foreach ($band_menu as $menu_key => $menu_item) {
+    if(is_numeric($menu_key)){
+      $node = menu_get_object('node', 1, $menu_item['#href']);
+      $band_menu[$menu_key]['#localized_options']['attributes']['data-band-id'] = array($node->nid);
+    }
+  }
+  $variables['band_menu'] = drupal_render($band_menu);
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function coax_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if($node->type == 'band'){
+    $variables['shows'] = views_get_view_result('shows', 'block', array('nid' => $node->nid));
+  }
 }
 
 ?>

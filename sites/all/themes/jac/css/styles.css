@@ -71,6 +71,8 @@ body {
 	background: #211f1f;
 }
 
+.element-invisible { display: none; }
+
 
 /** TYPOGRAPHY
 ==========================================================**/
@@ -175,6 +177,7 @@ aside {
 ==========================================================**/
 
 input[type="text"],
+input[type="email"],
 textarea {
 	border: solid #999 1px;
 	padding: 8px;
@@ -192,7 +195,7 @@ label {
 	display: block;
 }
 
-form .row {
+form .form-item {
 	margin-bottom: 0.75em;
 }
 
@@ -210,10 +213,12 @@ input[type="submit"] {
   cursor: auto;
 }
 
-.errorMessage {
+.error {
 	padding-top: 3px;
 	color: #ec384a;
 }
+
+.form-required { display: none; }
 
 /** CALENDAR
 ==========================================================**/
@@ -439,13 +444,13 @@ nav.main a:hover:after {
 	margin-bottom: 30px;
 }
 
-.body {
+.field-name-body {
 	font-size: 16px;
 	line-height: 20px;
 	margin-bottom: 20px;
 }
 
-.body p {
+.field-name-body p {
 	margin-bottom: 20px;
 }
 
@@ -485,7 +490,7 @@ nav.main a:hover:after {
 /** SIDEBAR
 ==========================================================**/
 
-.block {
+aside .block {
 	position: relative;
 	padding: 20px;
 	background: #fff;

@@ -10,7 +10,7 @@ $(function(){
 			}
 		});
 	}
-	
+
 	if($('.img-wrap').length > 0){
 		var speed = 400;
 		$('nav.main a').hover(function() {
@@ -19,13 +19,15 @@ $(function(){
 			$('.band-pic-' + bandId).fadeIn(speed);
 		}, function() {
 			$('.band-pic').stop(true, true).fadeOut(speed);
-		});		
-		
+		});
+
 		$('nav.main').hover(function() {
 			$('.img-main').fadeOut(speed);
 		}, function() {
 			$('.img-main').stop(true, true).fadeIn(speed);
 		});
 	}
-	
+
+	$('.webform-client-form').validate();
+
 });
