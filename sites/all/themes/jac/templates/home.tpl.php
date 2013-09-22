@@ -17,6 +17,7 @@
     <h3>Music</h3>
     <?php if($track): ?>
     <script type="text/javascript" charset="utf-8">
+    (function($){
       $(function(){
         $('#jquery_jplayer_1').jPlayer({
           ready: function(){
@@ -28,6 +29,7 @@
           swfPath: '/sites/all/themes/jac/js/jplayer'
         });
       });
+    })(jQuery);
     </script>
     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
     <div id="jp_container_1" class="jp-audio clearfix">
@@ -68,7 +70,7 @@
         <div class="row row-show clearfix">
           <div class="right">
             <div class="venue"><?php print $show->node_field_data_field_venue_title; ?></div>
-            <div class="band"><?php print $show->node_field_data_field_band_title; ?> <?php print $show->taxonomy_term_data_field_data_field_show_type_name; ?></div>
+            <div class="band"><?php print $show->node_field_data_field_band_title; ?> (<?php print $show->taxonomy_term_data_field_data_field_show_type_name; ?>)</div>
             <?php if($show->field_field_description): ?>
               <div class="description"><?php print render($show->field_field_description); ?></div>
             <?php endif; ?>
