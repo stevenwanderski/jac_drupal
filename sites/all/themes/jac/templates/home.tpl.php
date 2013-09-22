@@ -22,7 +22,7 @@
         $('#jquery_jplayer_1').jPlayer({
           ready: function(){
             $(this).jPlayer('setMedia', {
-              mp3: '<?php print render($track); ?>'
+              mp3: '<?php print strip_tags(render($track)); ?>'
             });
           },
           volume: 1,
