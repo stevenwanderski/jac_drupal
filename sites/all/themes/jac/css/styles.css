@@ -178,6 +178,7 @@ aside {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
 	border: solid #999 1px;
 	padding: 8px;
@@ -219,6 +220,8 @@ input[type="submit"] {
 }
 
 .form-required { display: none; }
+
+#user-login .description { display: none; }
 
 /** CALENDAR
 ==========================================================**/
@@ -444,13 +447,15 @@ nav.main a:hover:after {
 	margin-bottom: 30px;
 }
 
-.field-name-body {
+.field-name-body,
+.body {
 	font-size: 16px;
 	line-height: 20px;
 	margin-bottom: 20px;
 }
 
-.field-name-body p {
+.field-name-body p,
+.body p {
 	margin-bottom: 20px;
 }
 

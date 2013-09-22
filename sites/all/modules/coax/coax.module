@@ -39,6 +39,16 @@ function coax_home(){
  */
 function coax_calendar(){
   $vars = array();
+  $shows_data = views_get_view_result('shows', 'all');
+  $shows = array();
+  foreach ($shows_data as $show) {
+    $shows[] = array(
+      'title' => '<div class="cal-band-title">' . $show->node_field_data_field_band_title . '</div>' . $show->node_field_data_field_venue_title . ' - ' . render($show->field_field_time),
+      'start' => strip_tags(render($show->field_field_date))
+    );
+  }
+  // dpm($shows);
+  $vars['shows'] = json_encode($shows);
   return theme('jac_calendar', $vars);
 }
 

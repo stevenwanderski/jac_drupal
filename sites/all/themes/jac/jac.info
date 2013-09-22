@@ -7,6 +7,11 @@ core = 7.x
 stylesheets[screen][] = css/styles.css
 
 scripts[] = js/jquery.validate.min.js
+scripts[] = js/jplayer/jquery.jplayer.min.js
+scripts[] = js/fancybox/jquery.fancybox.js
+scripts[] = js/jquery.validate.min.js
+scripts[] = js/fullcalendar/fullcalendar.min.js
 scripts[] = js/scripts.js
 
 regions[content] = Content
+regions[page_bottom] = Page bottom
