@@ -1,5 +1,5 @@
 <header>
-  <h1 class="logo"><a href="/">Coax<span>&amp;</span>Folks</a></h1>
+  <h1 class="logo"><a href="/"><img src="/sites/all/themes/jac/images/logo.svg" /></a></h1>
 </header>
 
 <section id="main"><div class="inner clearfix">
